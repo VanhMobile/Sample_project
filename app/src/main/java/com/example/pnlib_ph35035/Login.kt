@@ -22,7 +22,7 @@ class Login : AppCompatActivity() {
             val employee = PNLibDataBase.getInstance(this).PNLibDao().checkIdEmployee(id, password)
             employee?.let {
                 employee.status = "Log In"
-                PNLibDataBase.getInstance(this).PNLibDao().upDataPassword(employee)
+                PNLibDataBase.getInstance(this).PNLibDao().upDataPassword(it)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }

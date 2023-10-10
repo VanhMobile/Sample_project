@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroud_account"
+    tools:context=".SignUp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:fontFamily="@font/bowlby_one"
+        android:gravity="center"
+        android:letterSpacing="0.1"
+        android:text="PNLib"
+        android:textColor="@color/Tomato"
+        android:textSize="@dimen/_40sdp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:paddingStart="@dimen/_25sdp"
+        app:hintEnabled="false"
+        android:paddingEnd="@dimen/_25sdp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/edt_full_name"
+            android:textColorHint="@color/lightBlack"
+            android:hint="Full name"
+            android:background="@drawable/edt_custom_rd_10"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_18ssp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:paddingStart="@dimen/_25sdp"
+        app:hintEnabled="false"
+        android:paddingEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/edt_email"
+            android:textColorHint="@color/lightBlack"
+            android:hint="Email"
+            android:background="@drawable/edt_custom_rd_10"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_18ssp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        android:paddingStart="@dimen/_25sdp"
+        android:paddingEnd="@dimen/_25sdp"
+        app:passwordToggleEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/edt_password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/lightBlack"
+            android:background="@drawable/edt_custom_rd_10"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_18ssp"
+            android:hint="Password"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_18ssp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:padding="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Đăng Ký"/>
+
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bạn đã có tài khoản? Đăng Nhập"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"/>
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="img_rd_10">
+        <item name="cornerSize">@dimen/_10sdp</item>
+    </style>
+</resources>

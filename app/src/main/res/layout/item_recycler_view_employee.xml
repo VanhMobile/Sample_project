@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_card_employee"
+    android:elevation="10dp"
+    android:id="@+id/item"
+    android:paddingBottom="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Thẻ nhân viên"
+        android:textColor="@color/white"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/title_card_employee"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgEmployee"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/avt_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/cardNameEmployee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nguyễn Việt Anh"
+        android:textSize="@dimen/_15ssp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgEmployee"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TextView
+        android:id="@+id/officeDuty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="chức vu: Admin"
+        android:textSize="@dimen/_15ssp"
+        android:layout_marginStart="@dimen/_20ssp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgEmployee"
+        app:layout_constraintTop_toBottomOf="@+id/cardNameEmployee" />
+
+    <TextView
+        android:id="@+id/idEmployee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mã: PH35035"
+        android:textSize="@dimen/_15ssp"
+        android:layout_marginStart="@dimen/_20ssp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgEmployee"
+        app:layout_constraintTop_toBottomOf="@+id/officeDuty" />
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Email: vanhcoder8386@gmail.com"
+        android:textSize="@dimen/_15ssp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgEmployee"
+        app:layout_constraintTop_toBottomOf="@+id/idEmployee" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

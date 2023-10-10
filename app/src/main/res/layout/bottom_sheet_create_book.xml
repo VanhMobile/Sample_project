@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_sheet_create_book_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tạo ảnh bìa"
+        android:gravity="center_horizontal"
+        android:textColor="#434242"
+        android:textSize="@dimen/_15ssp"/>
+    <TextView
+        android:id="@+id/library"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lấy từ thư viên"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center_horizontal"
+        android:textColor="#434242"
+        android:textSize="@dimen/_15ssp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_8sdp"
+        android:background="@color/Gray"/>
+
+    <TextView
+        android:id="@+id/cancle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hủy"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:gravity="center_horizontal"
+        android:textColor="#434242"
+        android:textSize="@dimen/_15ssp"/>
+
+
+</LinearLayout>

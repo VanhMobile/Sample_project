@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud_account"
+    >
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:fontFamily="@font/asap_bold"
+        android:text="Điền đầy đủ thông tin khách hàng của bạn"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:background="@drawable/bg_add_book"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTd">
+
+        <EditText
+            android:id="@+id/edtIdCustomer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID"/>
+
+        <TextView
+            android:id="@+id/errorMessId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#E30B0B"
+            />
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên"/>
+        <TextView
+            android:id="@+id/errorMessName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#E30B0B"
+            />
+        <EditText
+            android:id="@+id/edtNumberPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="SĐT"/>
+
+        <TextView
+            android:id="@+id/errorMessPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#E30B0B"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveCustomer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/salmon"
+            android:text="Lưu" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

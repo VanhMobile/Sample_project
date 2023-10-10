@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud_account"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgAvt"
+        app:srcCompat="@drawable/avt"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/circle"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Họ và tên: Nguyễn Việt Anh"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/tv_rd_10"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:textSize="@dimen/_18ssp"/>
+
+    <TextView
+        android:id="@+id/tvDuty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chức vụ: Admin"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/tv_rd_10"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:textSize="@dimen/_18ssp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/upDataPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnLogout"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="@color/salmon"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="Cập nhập mật khẩu" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="Đăng xuất"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp" />
+    </RelativeLayout>
+</LinearLayout>

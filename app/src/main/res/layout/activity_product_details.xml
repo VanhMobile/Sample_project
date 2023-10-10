@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetails">
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNameBook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/candal"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_6sdp"
+        android:text="Chi tiết"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintEnd_toStartOf="@+id/tvUpdataBook"
+        app:layout_constraintStart_toEndOf="@+id/imgBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUpdataBook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_6sdp"
+        android:text="Sửa"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameBook">
+
+        <ImageView
+            android:id="@+id/imgBook"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:src="@drawable/demo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/titleBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgBook"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/baloo"
+            android:gravity="center_horizontal"
+            android:text="Bếp ấm nhà vui"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp" />
+
+        <TextView
+            android:id="@+id/cateBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="Thể loại: SÁch nấu ăn"
+            android:textSize="@dimen/_15ssp"
+            android:layout_below="@+id/titleBook"/>
+
+        <TextView
+            android:id="@+id/priceBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="giá: 30000Đ"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_15ssp"
+            android:layout_below="@+id/cateBook"/>
+
+        <TextView
+            android:id="@+id/quantityBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="Số lượng: 30"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_15ssp"
+            android:layout_below="@+id/priceBook"/>
+
+        <TextView
+            android:id="@+id/watchedBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="23"
+            android:textSize="@dimen/_13ssp"
+            android:drawableStart="@drawable/fire"
+            android:drawablePadding="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_below="@+id/quantityBook"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddBill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="Tạo Phiếu" />
+
+        <LinearLayout
+            android:id="@+id/viewQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDown"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:text="down"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/quantityBill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="1"
+                android:textSize="@dimen/_15ssp" />
+
+            <Button
+                android:id="@+id/btnPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:text="plus"
+                android:textSize="@dimen/_10ssp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

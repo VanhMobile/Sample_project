@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="@dimen/_10sdp"
+    android:background="@drawable/detail_bill_bg"
+    android:id="@+id/itemBill"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:elevation="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/infor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_20sdp"
+        android:background="@color/LightSteelBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:drawableStart="@drawable/shops"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_20ssp"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:text="Vanh shop"
+            android:layout_weight="1"
+            android:textColor="@color/white"/>
+        <View
+            android:id="@+id/status"
+            android:background="@drawable/status_book"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_20sdp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/nameCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Người thêu: Nguyễn Việt Anh 0984907397"
+        android:lineHeight="@dimen/_25sdp"
+        android:maxLines="2"
+        android:lines="2"
+        android:textSize="@dimen/_16ssp"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/infor"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="13dp" />
+
+    <ImageView
+        android:id="@+id/imgBook"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/demo"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameCustomer" />
+
+    <TextView
+        android:id="@+id/nameBook"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13ssp"
+        android:layout_height="wrap_content"
+        android:text="Bếp ấm nhà vui"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@+id/imgBook"
+        app:layout_constraintTop_toBottomOf="@+id/nameCustomer" />
+
+
+    <TextView
+        android:id="@+id/priceBook"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_height="wrap_content"
+        android:text="giá tiền: 30000đ"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@+id/imgBook"
+        app:layout_constraintTop_toBottomOf="@+id/nameBook"/>
+
+
+    <TextView
+        android:id="@+id/quantityBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp"
+        android:text="x3"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toTopOf="@+id/view1"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        android:background="@color/black"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/sumPrice"
+        app:layout_constraintTop_toBottomOf="@+id/imgBook"
+        tools:layout_editor_absoluteX="13dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Tổng tiền: "
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBook" />
+
+    <TextView
+        android:id="@+id/sumPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90000Đ"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnStatus"
+        android:text="Xác nhận"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

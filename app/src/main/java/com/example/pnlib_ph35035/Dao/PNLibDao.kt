@@ -100,22 +100,17 @@ interface PNLibDao {
     @Query("SELECT SUM(quantityBill * price) FROM bills INNER JOIN books ON idBookBill = idBook " +
             "WHERE dateBill >= :now AND dateBill < :checkNow")
     fun sumPriceToDay(now: String, checkNow: String): Int
-
-
     @Query("SELECT SUM(quantityBill) FROM bills")
     fun sumBooks(): Int
-
     @Query("SELECT SUM(quantityBill) FROM bills WHERE status = :status")
     fun sumStatus(status: String): Int
+
 
     // customer
     @Query("SELECT *FROM customer")
     fun getCustomer() : List<Customer>
-
     @Insert
     fun insertCustomer(customer: Customer)
-
     @Delete
     fun deleteCustomer(customer: Customer)
-
 }

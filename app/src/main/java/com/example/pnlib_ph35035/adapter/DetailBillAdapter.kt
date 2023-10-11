@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pnlib_ph35035.R
 import com.example.pnlib_ph35035.databinding.ItemRecyclerViewBillBookBinding
 import com.example.pnlib_ph35035.model.DetailBill
+import java.text.NumberFormat
+import java.util.Locale
 
 class DetailBillAdapter( var listDetailBill: List<DetailBill>, val click: Click)
     : RecyclerView.Adapter<DetailBillAdapter.DetailBillViewHolder>() {
@@ -16,12 +18,13 @@ class DetailBillAdapter( var listDetailBill: List<DetailBill>, val click: Click)
         :RecyclerView.ViewHolder(binding.root) {
 
             fun bin(detailBill: DetailBill){
+                val numberFormat = NumberFormat.getCurrencyInstance(Locale("vi", "VN"))
                 binding.nameCustomer.text = "Tên: " + detailBill.nameBill + "\n " + "SĐT: " +detailBill.numberPhoneBill
                 binding.imgBook.setImageBitmap(BitmapFactory.decodeFile(detailBill.imgPathBill))
                 binding.nameBook.text = detailBill.nameBookBill
                 binding.quantityBook.text = "x" + detailBill.quantityBill.toString()
-                binding.priceBook.text = detailBill.priceBill.toString() +"Đ"
-                binding.sumPrice.text = "" + (detailBill.quantityBill * detailBill.priceBill) +"Đ"
+                binding.priceBook.text = numberFormat.format(detailBill.priceBill)
+                binding.sumPrice.text = numberFormat.format(detailBill.quantityBill * detailBill.priceBill)
                 binding.btnStatus.setOnClickListener {
                     click.clickItem(detailBill.idBill)
                 }

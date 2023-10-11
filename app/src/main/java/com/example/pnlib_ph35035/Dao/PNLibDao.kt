@@ -47,6 +47,9 @@ interface PNLibDao {
     @Query("SELECT *FROM books WHERE category = :category")
     fun getCateBook(category: String) : List<Book>
 
+    @Query("SELECT SUM(quantity) FROM books")
+    fun quantityBook() : Int
+
     @Insert
     fun insertBook(book: Book)
 

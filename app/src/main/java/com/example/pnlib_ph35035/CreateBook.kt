@@ -140,6 +140,10 @@ class CreateBook : AppCompatActivity() {
                 try {
                     quantity = binding.tvQuantity.text.toString().toInt()
                     price = binding.tvPrice.text.toString().toInt()
+                    if (uriString.isNullOrEmpty()){
+                        Toast.makeText(this@CreateBook,"Chưa có ảnh",Toast.LENGTH_SHORT).show()
+                        return@setOnClickListener
+                    }
                     PNLibDataBase.getInstance(this).PNLibDao().insertBook(Book(null,uriString,title,category,quantity,price))
                     Toast.makeText(this@CreateBook,"Thêm Thành công",Toast.LENGTH_SHORT).show()
                     binding.tvTitle.text = "Tiêu đề"

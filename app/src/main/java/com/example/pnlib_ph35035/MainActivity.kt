@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-
         replaceFragment(HomeFragment(),false)
         mainBinding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){

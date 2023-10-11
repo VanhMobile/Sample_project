@@ -32,6 +32,16 @@ class HomeFragment() : Fragment(), ItemRecyclerViewBook.Click {
 
     private lateinit var adapterBook : ItemRecyclerViewBook
 
+    private lateinit var adapterBookKt : ItemRecyclerViewBook
+
+    private lateinit var adapterBookCook : ItemRecyclerViewBook
+
+    private lateinit var adapterBookAnime: ItemRecyclerViewBook
+
+    private lateinit var adapterBookNt: ItemRecyclerViewBook
+
+    private lateinit var adapterTop: ItemRecyclerViewBook
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -53,7 +63,7 @@ class HomeFragment() : Fragment(), ItemRecyclerViewBook.Click {
         val employee = PNLibDataBase.getInstance(requireContext()).PNLibDao().getEmployees("Log In")
 
         if (employee.officeDuty.uppercase() == "THỦ THƯ"){
-            homeBinding.group.visibility = View.GONE
+            homeBinding.employee.visibility = View.GONE
         }
         // thêm slider
         addSlider()
@@ -71,7 +81,7 @@ class HomeFragment() : Fragment(), ItemRecyclerViewBook.Click {
         homeBinding.recyclerviewAll.layoutManager = GridLayoutManager(requireContext(),3)
         homeBinding.recyclerviewAll.isNestedScrollingEnabled = false
 
-        val adapterTop = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().topTen(),this)
+        adapterTop = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().topTen(),this)
         homeBinding.recyclerviewBxh.adapter = adapterTop
         adapterTop.notifyDataSetChanged()
 
@@ -90,19 +100,19 @@ class HomeFragment() : Fragment(), ItemRecyclerViewBook.Click {
         }
 
 
-        val adapterBookKt = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Sách Kinh Tế"),this)
+        adapterBookKt = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Sách Kinh Tế"),this)
         homeBinding.recyclerviewKt.adapter = adapterBookKt
         homeBinding.recyclerviewKt.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
 
-        val adapterBookCook = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Sách Nấu Ăn"),this)
+        adapterBookCook = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Sách Nấu Ăn"),this)
         homeBinding.recyclerviewCook.adapter = adapterBookCook
         homeBinding.recyclerviewCook.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
 
-        val adapterBookAnime = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Truyện Anime"),this)
+        adapterBookAnime = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Truyện Anime"),this)
         homeBinding.recyclerviewAnime.adapter = adapterBookAnime
         homeBinding.recyclerviewAnime.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
 
-        val adapterBookNt = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Truyện Ngôn tình"),this)
+        adapterBookNt = ItemRecyclerViewBook(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Truyện Ngôn tình"),this)
         homeBinding.recyclerviewNt.adapter = adapterBookNt
         homeBinding.recyclerviewNt.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
 
@@ -175,6 +185,11 @@ class HomeFragment() : Fragment(), ItemRecyclerViewBook.Click {
         dialog.setPositiveButton("oke"){ dialog,which ->
             PNLibDataBase.getInstance(requireContext()).PNLibDao().deleteBook(book)
             adapterBook.setData(PNLibDataBase.getInstance(requireContext()).PNLibDao().getAllBook())
+            adapterBookKt.setData(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Sách Kinh Tế"))
+            adapterBookNt.setData(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Truyện Ngôn tình"))
+            adapterBookAnime.setData(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Truyện Anime"))
+            adapterBookCook.setData(PNLibDataBase.getInstance(requireContext()).PNLibDao().getCateBook("Sách Nấu Ăn"))
+            adapterTop.setData(PNLibDataBase.getInstance(requireContext()).PNLibDao().topTen())
             Toast.makeText(context,"Xóa thành công", Toast.LENGTH_SHORT).show()
         }
         dialog.setNegativeButton("cancel"){ dialog,which ->

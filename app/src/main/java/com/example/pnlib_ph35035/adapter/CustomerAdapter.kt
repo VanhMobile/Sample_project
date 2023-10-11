@@ -14,9 +14,9 @@ class CustomerAdapter(var listCustomer: List<Customer>, val click: Click)
     inner class CustomerViewHolder(val binding: ItemRecyclerViewPersonBinding)
         : RecyclerView.ViewHolder(binding.root) {
             fun bin(customer: Customer){
-                binding.idCustomer.text = customer.idCustomer
-                binding.cardNameCus.text = customer.name
-                binding.tvNumberPhone.text = customer.numberPhone
+                binding.idCustomer.text = "Mã thành viên: " + customer.idCustomer
+                binding.cardNameCus.text ="Tên: "+ customer.name
+                binding.tvNumberPhone.text ="SĐT: " +customer.numberPhone
                 binding.item.setOnClickListener {
                     click.clickItem(customer)
                 }

@@ -101,6 +101,10 @@ class CreateEmployeeFragment : BaseFragment() {
         val officeDuty = "Thủ thư"
         val email = createEmpBinding.tvEmail.text.toString()!!
         val pass = createEmpBinding.tvPassword.text.toString()!!
+        if (uriString.isNullOrEmpty()){
+            Toast.makeText(requireContext(),"Chưa có ảnh nhân viên",Toast.LENGTH_SHORT).show()
+            return
+        }
         val employee = Employee(id,name,officeDuty,email,pass,uriString,"Log out")
         PNLibDataBase.getInstance(requireContext()).PNLibDao().insertEmployee(employee)
         Toast.makeText(requireContext(),"Thêm nhân viên thành công",Toast.LENGTH_SHORT).show()

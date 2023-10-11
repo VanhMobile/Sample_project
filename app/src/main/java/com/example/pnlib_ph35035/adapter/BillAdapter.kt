@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pnlib_ph35035.databinding.ItemRecyclerViewBillBinding
 import com.example.pnlib_ph35035.model.Book
+import java.text.NumberFormat
+import java.util.Locale
 
 class BillAdapter(var books: List<Book>, val quantityBill: Int) : RecyclerView.Adapter<BillAdapter.ViewHolderBill>() {
 
@@ -13,9 +15,10 @@ class BillAdapter(var books: List<Book>, val quantityBill: Int) : RecyclerView.A
         : RecyclerView.ViewHolder(binding.root) {
 
             fun bin(book: Book){
+                val numberFormat = NumberFormat.getCurrencyInstance(Locale("vi", "VN"))
                 binding.imgBook.setImageBitmap(BitmapFactory.decodeFile(book.imgPath))
                 binding.nameBook.text = book.nameBook
-                binding.priceBook.text = book.price.toString() +"Đ"
+                binding.priceBook.text = numberFormat.format(book.price)
                 binding.quantityBook.text = "x"+ quantityBill.toString()
             }
     }

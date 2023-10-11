@@ -81,7 +81,6 @@ class AddCustomer : Fragment() {
         }
     }
 
-
     private fun replaceFragment(fragment: Fragment, isTransition: Boolean){
         val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
         if (isTransition){

@@ -11,6 +11,7 @@ import com.example.pnlib_ph35035.model.Book
 import com.example.pnlib_ph35035.model.Customer
 import com.example.pnlib_ph35035.model.DetailBill
 import com.example.pnlib_ph35035.model.Employee
+import com.example.pnlib_ph35035.model.History
 
 
 @Dao
@@ -116,4 +117,16 @@ interface PNLibDao {
     fun insertCustomer(customer: Customer)
     @Delete
     fun deleteCustomer(customer: Customer)
+
+    //
+    @Query("SELECT searchName FROM history")
+    fun getAllHistory() : List<String>
+
+    @Insert
+    fun insertHistory(history: History)
+
+    @Query("DELETE FROM history")
+    fun deleteHistory()
+
+    //SELECT * FROM books ORDER BY  substr(nameBook, 1, 1) ASC
 }

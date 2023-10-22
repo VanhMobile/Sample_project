@@ -26,5 +26,12 @@ data class Book(
     var quantity: Int,
 
     @ColumnInfo("price")
-    var price: Int
-):Serializable
+    var price: Int,
+
+    @ColumnInfo("color")
+    var color: String?
+):Serializable{
+    override fun toString(): String {
+        return "$color + $nameBook + $category"
+    }
+}

@@ -4,14 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import androidx.core.content.ContextCompat
 
-class WelcomeScreen : AppCompatActivity() {
+class wellcomeSecree2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.statusBar)
-        setContentView(R.layout.activity_wellcome_screen)
-
+        setContentView(R.layout.activity_wellcome_secree2)
         initView()
     }
 
@@ -19,7 +16,7 @@ class WelcomeScreen : AppCompatActivity() {
         val handler = Handler()
 
         val runnable = Runnable{
-            val intent = Intent(this@WelcomeScreen, wellcomeSecree2::class.java)
+            val intent = Intent(this@wellcomeSecree2, Login::class.java)
             startActivity(intent)
         }
 

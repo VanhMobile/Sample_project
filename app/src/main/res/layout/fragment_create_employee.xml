@@ -175,8 +175,12 @@
                 android:textSize="@dimen/_15ssp" />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/Gray" />
+
         <LinearLayout
-            android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
@@ -202,6 +206,36 @@
                 android:text="mật khẩu"
                 android:textColor="@color/Gray"
                 android:textSize="@dimen/_15ssp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/Gray" />
+
+        <LinearLayout
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Giới tính"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton

@@ -43,6 +43,7 @@ class CreateBook : AppCompatActivity() {
     private var quantity = 1
     private var title = ""
     private var price = 10000
+    private var color = "orange"
     private var status = "save"
     val someActivityForResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -133,6 +134,21 @@ class CreateBook : AppCompatActivity() {
             }
         }
 
+        binding.orange.setOnClickListener {
+            color = "orange"
+        }
+        binding.tomato.setOnClickListener {
+            color = "tomato"
+        }
+
+        binding.salmon.setOnClickListener {
+            color = "salmon"
+        }
+
+        binding.magenta.setOnClickListener {
+            color = "magenta"
+        }
+
         binding.btnSaveBook.setOnClickListener {
             if (status == "save"){
                 title = binding.tvTitle.text.toString()
@@ -144,7 +160,7 @@ class CreateBook : AppCompatActivity() {
                         Toast.makeText(this@CreateBook,"Chưa có ảnh",Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
                     }
-                    PNLibDataBase.getInstance(this).PNLibDao().insertBook(Book(null,uriString,title,category,quantity,price))
+                    PNLibDataBase.getInstance(this).PNLibDao().insertBook(Book(null,uriString,title,category,quantity,price,color))
                     Toast.makeText(this@CreateBook,"Thêm Thành công",Toast.LENGTH_SHORT).show()
                     binding.tvTitle.text = "Tiêu đề"
                     binding.tvQuantity.text = "Số lượng"
@@ -164,6 +180,7 @@ class CreateBook : AppCompatActivity() {
                     book.quantity = quantity
                     book.category = category
                     book.imgPath = uriString
+                    book.color = color
                     PNLibDataBase.getInstance(this).PNLibDao().upDataBook(book)
                     binding.tvTitle.text = "Tiêu đề"
                     binding.tvQuantity.text = "Số lượng"

@@ -19,6 +19,7 @@ import com.example.pnlib_ph35035.CreateCustomer
 import com.example.pnlib_ph35035.CreateEmployee
 import com.example.pnlib_ph35035.DataBase.PNLibDataBase
 import com.example.pnlib_ph35035.ProductDetails
+import com.example.pnlib_ph35035.SearchActivity
 import com.example.pnlib_ph35035.adapter.ItemRecyclerViewBook
 import com.example.pnlib_ph35035.databinding.FragmentHomeBinding
 import com.example.pnlib_ph35035.model.Book
@@ -152,7 +153,9 @@ class HomeFragment() : Fragment(), ItemRecyclerViewBook.Click {
             startActivity(intent)
         }
 
-
+        homeBinding.imgSearch.setOnClickListener {
+            startActivity(Intent(requireContext(),SearchActivity::class.java))
+        }
 
     }
 

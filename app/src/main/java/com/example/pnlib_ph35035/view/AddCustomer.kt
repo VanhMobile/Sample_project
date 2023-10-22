@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.pnlib_ph35035.DataBase.PNLibDataBase
 import com.example.pnlib_ph35035.R
@@ -79,6 +80,11 @@ class AddCustomer : Fragment() {
         addCustomerBinding.imgBack.setOnClickListener {
             replaceFragment(GetCustomer(),false)
         }
+
+        val listGender = listOf<String>("Nam","Nữ","Giới tính khác")
+        val adapterSpinnerGen = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, listGender)
+        adapterSpinnerGen.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        addCustomerBinding.gender.adapter = adapterSpinnerGen
     }
 
     private fun replaceFragment(fragment: Fragment, isTransition: Boolean){

@@ -85,7 +85,8 @@ class ChartFragment : Fragment() {
             .toString() + " quyển"
 
         chartBinding.sumBookInventory.text = (PNLibDataBase.getInstance(requireContext())
-            .PNLibDao().quantityBook() - PNLibDataBase.getInstance(requireContext()).PNLibDao().sumBooks()).toString() + " quyển"
+            .PNLibDao().quantityBook() - PNLibDataBase.getInstance(requireContext())
+            .PNLibDao().sumStatus("chưa trả")).toString() + " quyển"
     }
 
     private fun addEntries() {

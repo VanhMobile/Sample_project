@@ -36,6 +36,12 @@ class ProductDetails : AppCompatActivity() {
             productBinding.imgBook.setImageBitmap(BitmapFactory.decodeFile(it.imgPath))
             productBinding.titleBook.text = it.nameBook
             productBinding.cateBook.text = "Thể loại: " + it.category
+            when(it.color){
+                "orange" -> productBinding.color.setBackgroundResource(R.drawable.backroung_orange)
+                "tomato" -> productBinding.color.setBackgroundResource(R.drawable.backroung_tomato)
+                "salmon" -> productBinding.color.setBackgroundResource(R.drawable.backroung_salmon)
+                "magenta" -> productBinding.color.setBackgroundResource(R.drawable.backroung_magenta)
+            }
             val loansBook = PNLibDataBase.getInstance(this).PNLibDao().bookReturn("chưa trả", it.idBook!!)
             Log.e("sl", loansBook.toString())
             val quantityLeft = it.quantity - loansBook

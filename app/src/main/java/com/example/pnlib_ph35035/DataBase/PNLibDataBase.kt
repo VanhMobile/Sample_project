@@ -13,11 +13,12 @@ import com.example.pnlib_ph35035.model.Book
 import com.example.pnlib_ph35035.model.Customer
 import com.example.pnlib_ph35035.model.DetailBill
 import com.example.pnlib_ph35035.model.Employee
+import com.example.pnlib_ph35035.model.History
 import java.util.Objects
 
 
-@Database(entities = [Bill::class, Book::class, Customer::class,Employee::class]
-    , version = 3
+@Database(entities = [Bill::class, Book::class, Customer::class,Employee::class,History::class]
+    , version = 5
 )
 abstract class PNLibDataBase : RoomDatabase() {
     abstract fun PNLibDao() : PNLibDao
@@ -31,6 +32,7 @@ abstract class PNLibDataBase : RoomDatabase() {
 
         }
 
+
         val MIGRATION_FROM_2_3 = object : Migration(2,3){
 
             override fun migrate(database: SupportSQLiteDatabase) {
@@ -39,6 +41,22 @@ abstract class PNLibDataBase : RoomDatabase() {
 
         }
 
+        val MIGRATION_FROM_3_4 = object : Migration(3,4){
+
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("CREATE TABLE IF NOT EXISTS history (" +
+                        " idHistory INTEGER PRIMARY KEY AUTOINCREMENT, searchName TEXT)")
+            }
+
+        }
+
+        val MIGRATION_FROM_4_5 = object : Migration(4,5){
+
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE books ADD COLUMN color TEXT")
+            }
+
+        }
 
         @Volatile
         private var INSTANCE: PNLibDataBase? = null
@@ -54,7 +72,8 @@ abstract class PNLibDataBase : RoomDatabase() {
                     ,PNLibDataBase::class.java
                     ,"pnlib.db")
                     .allowMainThreadQueries()
-                    .addMigrations(MIGRATION_FROM_1_2, MIGRATION_FROM_2_3)
+                    .addMigrations(MIGRATION_FROM_1_2, MIGRATION_FROM_2_3, MIGRATION_FROM_3_4,
+                        MIGRATION_FROM_4_5)
                     .build()
 
                 INSTANCE = instance

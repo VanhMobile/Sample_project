@@ -205,6 +205,48 @@
                 android:textSize="@dimen/_15ssp" />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/Gray" />
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <View
+                android:id="@+id/magenta"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/backroung_magenta"/>
+
+            <View
+                android:layout_marginStart="@dimen/_10sdp"
+                android:id="@+id/orange"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/backroung_orange"/>
+
+            <View
+                android:id="@+id/salmon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/backroung_salmon"/>
+
+            <View
+                android:id="@+id/tomato"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@drawable/backroung_tomato"/>
+
+        </LinearLayout>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSaveBook"
             android:layout_width="wrap_content"

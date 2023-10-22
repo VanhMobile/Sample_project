@@ -80,6 +80,11 @@
             android:layout_height="wrap_content"
             android:textColor="#E30B0B"
             />
+        <Spinner
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_height="wrap_content"/>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSaveCustomer"
             android:layout_width="wrap_content"
